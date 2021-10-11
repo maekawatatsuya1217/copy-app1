@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%# ヘッダー %>
     <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">PicTweet</a></h1>
@@ -18,11 +19,16 @@
         </div>
       </div>
     </header>
+    <%# ヘッダー %>
+
     <%= yield %>
+    
+    <%# フッター %>
     <footer>
       <p>
         Copyright PicTweet 2019.
       </p>
     </footer>
+    <%# フッター %>
   </body>
 </html>
