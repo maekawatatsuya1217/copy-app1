@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
     before_action :set_tweet, only: [:edit, :show]
-    before_action :move_to_index, except: [:index, :show]
+    before_action :move_to_index, except: [:index, :show, :search]
 
     def index
         @tweets = Tweet.includes(:user).order("created_at DESC")
@@ -31,6 +31,10 @@ class TweetsController < ApplicationController
     def destroy
         tweet = Tweet.find(params[:id])
         tweet.destroy
+    end
+
+    def search
+        @tweets = Tweet.search(params[:keyword])
     end
 
     private
