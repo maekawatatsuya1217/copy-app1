@@ -1,9 +1,5 @@
 class Tweet < ApplicationRecord
-    
-  with_options presence: true do
-    validates :nickname
-    validates :text
-  end
+    validates :text, presence: true
     
     belongs_to :user
     has_many :comments
